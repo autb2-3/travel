@@ -10,7 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_03_162100) do
+ActiveRecord::Schema.define(version: 2021_11_04_155900) do
+
+  create_table "reserves", force: :cascade do |t|
+    t.string "title"
+    t.integer "price"
+    t.string "area"
+    t.text "comment"
+    t.datetime "start"
+    t.datetime "end"
+    t.integer "roomid"
+    t.integer "people"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "rooms", force: :cascade do |t|
+    t.string "title"
+    t.integer "price"
+    t.string "area"
+    t.text "comment"
+    t.string "image"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -21,6 +44,8 @@ ActiveRecord::Schema.define(version: 2021_11_03_162100) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "image"
+    t.string "name"
+    t.text "profile"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
