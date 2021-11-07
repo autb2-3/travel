@@ -11,12 +11,13 @@ class ReserveController < ApplicationController
     @room = Room.find(params[:format])
     @reserve = Reserve.new(reserve_params)
       
-		if @reserve.invalid?
+	if @reserve.invalid?
 			render reserve_room_path
 			
 	else
 		@day=((@reserve.end)-(@reserve.start))/86400
 		@price=@reserve.people*@day*@room.price
+		@reserve.save
 	end
    
   end
