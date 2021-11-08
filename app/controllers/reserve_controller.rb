@@ -34,7 +34,7 @@ class ReserveController < ApplicationController
 		@reserve = Reserve.new(reserve_params)
 		@room = Room.find(params[:format])
 		render reserve_room_path
-	end
+  end
   
   def reserve_params
         params.require(:reserve).permit(:title ,:price,:area,:comment,:roomid,:start,:end,:people)

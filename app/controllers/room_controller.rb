@@ -41,10 +41,11 @@ class RoomController < ApplicationController
   
   
   def room_params
-   params.require(:room).permit(:title ,:price,:area,:comment,:image)
+   params.require(:room).permit(:title,:price,:area,:comment,:image)
   end
   
   def posts
    @room =Room.all
   end
+  
 end

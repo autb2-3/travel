@@ -11,5 +11,5 @@ class Room < ApplicationRecord
   end
  end
   belongs_to :user
-  has_many :reserves
+  has_many :reserve
 end
