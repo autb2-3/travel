@@ -8,7 +8,4 @@ def start_end_check
  
 end
   
- belongs_to :room
- belongs_to :user
-  
 end

@@ -10,6 +10,4 @@ class Room < ApplicationRecord
     Room.all
   end
  end
-  belongs_to :user
-  has_many :reserve
 end
